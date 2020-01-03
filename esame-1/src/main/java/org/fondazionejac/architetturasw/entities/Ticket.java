@@ -8,4 +8,5 @@ public interface Ticket {
 	public void prova();
 	public void sku();
 	public void ciao();
+	public void test();
 }
