@@ -1,60 +1,24 @@
 package org.fondazionejac.architetturasw.entities;
 
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
-public class TicketGenerico implements Ticket {
-	private String titolo;
-	private String descrizione;
-    private Date data;
-	private String campoappartenenza;
-	private String reparto;
+@Entity
+@Table(name="Generico")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class TicketGenerico extends BaseTicket implements Ticket {
+
 	
-	public TicketGenerico() {};
-	public TicketGenerico(String titolo, String descrizione, Date data,String campoappartenenza,String reparto) {
-		this.titolo=titolo;
-		this.descrizione=descrizione;
-		this.data=data;
-		this.campoappartenenza=campoappartenenza;
-		this.reparto=reparto;
-		// TODO Auto-generated constructor stub
-	}
+	private String reparto;
+
+	public TicketGenerico() {
+	};
 
 	@Override
-	public String tipoticket()
-	{
+	public String tipoticket() {
 		return "Ticket generico";
-	}
-	
-	public String getTitolo() {
-		return titolo;
-	}
-
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
-	}
-
-	public String getDescrizione() {
-		return descrizione;
-	}
-
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-
-	public Date getData() {
-		return data;
-	}
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-	public String getCampoappartenenza() {
-		return campoappartenenza;
-	}
-
-	public void setCampoappartenenza(String campoappartenenza) {
-		this.campoappartenenza = campoappartenenza;
 	}
 
 	public String getReparto() {
@@ -64,12 +28,5 @@ public class TicketGenerico implements Ticket {
 	public void setReparto(String reparto) {
 		this.reparto = reparto;
 	}
-
-	@Override
-	public String toString() {
-		return "TicketGenerico [titolo=" + titolo + ", descrizione=" + descrizione + ", data=" + data
-				+ ", campoappartenenza=" + campoappartenenza + ", reparto=" + reparto + "]";
-	}
-
 
 }

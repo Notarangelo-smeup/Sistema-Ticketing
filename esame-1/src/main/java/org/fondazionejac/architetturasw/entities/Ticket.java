@@ -5,9 +5,5 @@ import java.util.Date;
 public interface Ticket {
     
 	public String tipoticket();
-	public void prova();
-	public void sku();
-	public void ciao();
-	public void test();
-	public void packageExplorer();
+
 }

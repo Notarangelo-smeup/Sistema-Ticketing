@@ -27,7 +27,7 @@ public class TicketFactory {
 	        		System.out.print("Inserire reparto ticket: ");
 	        		String reparto=in.nextLine();
 	            	Date data = new Date();
-	                retval = new TicketGenerico(titolo,descrizione,data,campoappartenenza,reparto);
+	                retval = new TicketGenerico();
 	                break;
 	            case Software:
 	            	System.out.print("Inserire titolo ticket: ");
@@ -42,7 +42,7 @@ public class TicketFactory {
 	        		System.out.print("Inserire areasoftware ticket: ");
 	        		String areasoftware=in.nextLine();
 	            	Date data1 = new Date();
-	                retval = new TicketSoftware(titolo1,descrizione1,data1,gravita,areasoftware);
+	                retval = new TicketSoftware();
 	                break;
 	        }
 	        return retval;

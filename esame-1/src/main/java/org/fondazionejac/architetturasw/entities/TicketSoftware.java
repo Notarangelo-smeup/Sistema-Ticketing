@@ -1,88 +1,46 @@
 package org.fondazionejac.architetturasw.entities;
 
-import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
-public class TicketSoftware implements Ticket {
-	private String titolo;
-	private String descrizione;
-    private Date data;
+@Entity
+@Table(name = "Software")
+@Inheritance(strategy = InheritanceType.JOINED)
+public class TicketSoftware extends BaseTicket implements Ticket  {
+
+	@Column (name= "gravita")
 	private String gravita;
-	private String areaSoftware;
 	
-	public TicketSoftware() {};
-	public TicketSoftware(String titolo, String descrizione, Date data,String gravita,String areaSoftware) {
-	    this.titolo=titolo;
-	    this.descrizione=descrizione;
-	    this.data=data;
-		this.gravita=gravita;
-		this.areaSoftware=areaSoftware;
-		
-		
-		// TODO Auto-generated constructor stub
-	}
+	@Column (name = "bloccante")
+	private boolean bloccante;
+	
+	@Column (name = "area")
+	private String areaSoftware;
+
+	public TicketSoftware() {
+	};
 
 	@Override
-	public String tipoticket()
-	{
+	public String tipoticket() {
 		return "Ticket MalfunzionamentoSoftware";
 	}
 	
-	public String getTitolo() {
-		return titolo;
-	}
-
-
-	public void setTitolo(String titolo) {
-		this.titolo = titolo;
-	}
-
-
-	public String getDescrizione() {
-		return descrizione;
-	}
-
-
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
-	}
-
-
-	public Date getData() {
-		return data;
-	}
-
-
-	public void setData(Date data) {
-		this.data = data;
-	}
-
-
 	public String getGravita() {
 		return gravita;
 	}
-
 
 	public void setGravita(String gravita) {
 		this.gravita = gravita;
 	}
 
-
 	public String getAreaSoftware() {
 		return areaSoftware;
-	}
-
+	}	
 
 	public void setAreaSoftware(String areaSoftware) {
 		this.areaSoftware = areaSoftware;
 	}
-
-
-	@Override
-	public String toString() {
-		return "TicketSoftware [titolo=" + titolo + ", descrizione=" + descrizione + ", data=" + data + ", gravita="
-				+ gravita + ", areaSoftware=" + areaSoftware + "]";
-	}
-
-
-	
 }
