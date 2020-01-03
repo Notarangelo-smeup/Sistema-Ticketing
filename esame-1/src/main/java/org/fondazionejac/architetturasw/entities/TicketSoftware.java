@@ -9,7 +9,7 @@ public class TicketSoftware implements Ticket {
 	private String gravita;
 	private String areaSoftware;
 	
-	
+	public TicketSoftware() {};
 	public TicketSoftware(String titolo, String descrizione, Date data,String gravita,String areaSoftware) {
 	    this.titolo=titolo;
 	    this.descrizione=descrizione;

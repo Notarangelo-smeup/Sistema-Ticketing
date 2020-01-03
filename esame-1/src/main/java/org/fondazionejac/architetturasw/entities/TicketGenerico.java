@@ -9,6 +9,7 @@ public class TicketGenerico implements Ticket {
 	private String campoappartenenza;
 	private String reparto;
 	
+	public TicketGenerico() {};
 	public TicketGenerico(String titolo, String descrizione, Date data,String campoappartenenza,String reparto) {
 		this.titolo=titolo;
 		this.descrizione=descrizione;
