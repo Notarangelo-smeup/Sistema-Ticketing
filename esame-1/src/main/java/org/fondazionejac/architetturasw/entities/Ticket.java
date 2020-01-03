@@ -7,4 +7,5 @@ public interface Ticket {
 	public String tipoticket();
 	public void prova();
 	public void sku();
+	public void ciao();
 }
