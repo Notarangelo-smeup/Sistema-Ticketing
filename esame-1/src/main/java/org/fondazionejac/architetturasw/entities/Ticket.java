@@ -9,4 +9,5 @@ public interface Ticket {
 	public void sku();
 	public void ciao();
 	public void test();
+	public void packageExplorer();
 }
