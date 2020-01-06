@@ -7,8 +7,6 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Software")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class TicketSoftware extends BaseTicket implements Ticket  {
 
 	@Column (name= "gravita")

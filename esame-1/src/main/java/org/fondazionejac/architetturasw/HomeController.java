@@ -2,6 +2,7 @@ package org.fondazionejac.architetturasw;
 
 import javax.validation.Valid;
 
+import org.fondazionejac.architetturasw.dao.TicketDao;
 import org.fondazionejac.architetturasw.entities.TicketGenerico;
 import org.fondazionejac.architetturasw.entities.TicketSoftware;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
+	TicketDao dao = new TicketDao();
+	
 	@Value("${spring.application.name}")
 	String appName;
 
@@ -29,6 +32,8 @@ public class HomeController {
 	@RequestMapping(value = "/printGenerico", method = RequestMethod.POST)
 	public String printFormAttribute(@Valid @ModelAttribute("form") TicketGenerico bt, BindingResult result) {
 
+		
+		dao.creaTicket(bt);
 		System.out.println(bt.toString());
 		return "home";
 	}
@@ -36,6 +41,8 @@ public class HomeController {
 	@RequestMapping(value = "/printSoftware", method = RequestMethod.POST)
 	public String printFormAttribute(@Valid @ModelAttribute("form") TicketSoftware bt, BindingResult result) {
 
+		dao.creaTicket(bt);
+		
 		System.out.println(bt.toString());
 		return "home";
 	}
@@ -43,6 +50,8 @@ public class HomeController {
 	@RequestMapping(value = "/tipo", method = RequestMethod.POST)
 	public String dispatch(@ModelAttribute("form") String form, @RequestParam String tipo, BindingResult result) {
 
+		
+		
 		if (tipo.equals("Generico"))
 			return "generico";
 

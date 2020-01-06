@@ -1,16 +1,12 @@
 package org.fondazionejac.architetturasw.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="Generico")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class TicketGenerico extends BaseTicket implements Ticket {
 
-	
+	@Column(name="reparto")
 	private String reparto;
 
 	public TicketGenerico() {
