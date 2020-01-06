@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 @Entity
 @Table(name ="Ticket")
 public abstract class BaseTicket {
@@ -29,7 +31,9 @@ public abstract class BaseTicket {
 	
 	@Column(name = "creation_user")
 	private String creationUser;
-
+	
+	@Column(name = "tipo")
+	private String tipo;
 	/**
 	 * @return the id
 	 */
@@ -101,8 +105,19 @@ public abstract class BaseTicket {
 		this.creationUser = creationUser;
 	}
 	
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
+	@Override
+	public String toString() {
+		return "BaseTicket [id=" + id + ", oggetto=" + oggetto + ", descrizione=" + descrizione + ", creationTime="
+				+ creationTime + ", creationUser=" + creationUser + ", tipo=" + tipo + "]";
+	}
 
+	public String getTipo() {
+		return this.tipo;
+	}
 
 
 
