@@ -4,7 +4,7 @@ xmlns:th="http://www.thymeleaf.org">
 <body>
 <h1>Inserisci Ticket</h1>
 <p>Generico <span th:text="${appName}">Our App</span></p>
-<form action="#" th:action="@{/print}" th:object="${baseTicket}" modelAttribute= "form" method="post">
+<form action="#" th:action="@{/printGenerico}" th:object="${TicketGenerico}" modelAttribute= "form" method="post">
 
   <!-- CASELLE DI TESTO -->
   Titolo<br>

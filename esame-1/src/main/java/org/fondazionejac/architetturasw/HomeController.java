@@ -2,7 +2,8 @@ package org.fondazionejac.architetturasw;
 
 import javax.validation.Valid;
 
-import org.fondazionejac.architetturasw.entities.BaseTicket;
+import org.fondazionejac.architetturasw.entities.TicketGenerico;
+import org.fondazionejac.architetturasw.entities.TicketSoftware;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,8 +26,15 @@ public class HomeController {
 		return "home";
 	}
 
-	@RequestMapping(value = "/print", method = RequestMethod.POST)
-	public String printFormAttribute(@Valid @ModelAttribute("form") BaseTicket bt, BindingResult result) {
+	@RequestMapping(value = "/printGenerico", method = RequestMethod.POST)
+	public String printFormAttribute(@Valid @ModelAttribute("form") TicketGenerico bt, BindingResult result) {
+
+		System.out.println(bt.toString());
+		return "home";
+	}
+	
+	@RequestMapping(value = "/printSoftware", method = RequestMethod.POST)
+	public String printFormAttribute(@Valid @ModelAttribute("form") TicketSoftware bt, BindingResult result) {
 
 		System.out.println(bt.toString());
 		return "home";
