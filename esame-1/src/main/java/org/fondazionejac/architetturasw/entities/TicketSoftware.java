@@ -43,4 +43,12 @@ public class TicketSoftware extends BaseTicket implements Ticket  {
 	public void setAreaSoftware(String areaSoftware) {
 		this.areaSoftware = areaSoftware;
 	}
+
+	@Override
+	public String toString() {
+		return "TicketSoftware [gravita=" + gravita + ", bloccante=" + bloccante + ", areaSoftware=" + areaSoftware
+				+ ","  + super.toString() ;
+	}
+
+	
 }

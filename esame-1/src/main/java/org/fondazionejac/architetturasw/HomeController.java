@@ -35,7 +35,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/printSoftware", method = RequestMethod.POST)
 	public String printFormAttribute(@Valid @ModelAttribute("form") TicketSoftware bt, BindingResult result) {
-
+     
 		System.out.println(bt.toString());
 		return "home";
 	}
