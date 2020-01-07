@@ -1,0 +1,29 @@
+<html 
+xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>ListaTicket</title>
+	</head>
+	
+	<body>
+		<h1>ListaTicket</h1>
+    <table>
+
+      <tr>
+      	<th>Id</th>
+        <th>Cliente</th>
+        <th>Tipo</th>
+        <th>Oggetto</th>
+      </tr>
+      <tr th:each="ticket : ${tickets}">
+        <td th:text="${ticket.id}"></td>
+        <td th:text="${ticket.cliente}"></td>
+        <td th:text="${ticket.dtype}"></td>
+        <td th:text="${ticket.oggetto}"></td>
+        <td ><a th:href = "@{/modifica/details(id=${ticket.id})}">Modifica</a><td>
+      </tr>
+      
+    </table>
+    
+	</body>
+</html>

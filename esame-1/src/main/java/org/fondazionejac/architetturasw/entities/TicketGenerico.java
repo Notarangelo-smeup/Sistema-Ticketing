@@ -5,6 +5,9 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+import org.springframework.stereotype.Component;
+
+@Component(value="generico")
 @Entity
 @DiscriminatorColumn(name="tipo")
 @DiscriminatorValue(value="Generico")

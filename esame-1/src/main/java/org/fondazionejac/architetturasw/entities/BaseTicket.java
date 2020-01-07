@@ -1,6 +1,5 @@
 package org.fondazionejac.architetturasw.entities;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,13 +11,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name ="Ticket")
-public abstract class BaseTicket implements Serializable {
+public class BaseTicket {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	protected int id;
 	
+	@Column(name= "cliente")
+	private String cliente;
+
 	@Column(name= "oggetto")
 	private String oggetto;
 	
@@ -30,6 +32,9 @@ public abstract class BaseTicket implements Serializable {
 	
 	@Column(name = "creation_user")
 	private String creationUser;
+	
+	@Column(name= "dtype", insertable = false, updatable = false )
+	private String dtype;
 	
 	/**
 	 * @return the id
@@ -104,10 +109,40 @@ public abstract class BaseTicket implements Serializable {
 		this.creationUser = creationUser;
 	}
 	
+	
+	/**
+	 * @return the cliente
+	 */
+	public String getCliente() {
+		return cliente;
+	}
+
+	/**
+	 * @param cliente the cliente to set
+	 */
+	public void setCliente(String cliente) {
+		this.cliente = cliente;
+	}
+	 
+	
+
+	/**
+	 * @return the dtype
+	 */
+	public String getDtype() {
+		return dtype;
+	}
+
+	/**
+	 * @param dtype the dtype to set
+	 */
+	public void setDtype(String dtype) {
+		this.dtype = dtype;
+	}
 
 	@Override
 	public String toString() {
-		return "BaseTicket [id=" + id + ", oggetto=" + oggetto + ", descrizione=" + descrizione + ", creationTime="
+		return "BaseTicket [id=" + id + ", oggetto=" + oggetto + ", cliente=" + cliente + ", descrizione=" + descrizione + ", creationTime="
 				 + creationTime + ", creationUser=" + creationUser +"]";
 	}
 	
