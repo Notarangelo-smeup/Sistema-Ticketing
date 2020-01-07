@@ -26,7 +26,9 @@
 		<property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
 		<!-- mapping entita' -->
-	
+		<mapping class="org.fondazionejac.architetturasw.entities.BaseTicket" />
+		<mapping class="org.fondazionejac.architetturasw.entities.TicketGenerico" />
+		<mapping class="org.fondazionejac.architetturasw.entities.TicketSoftware" />
 
 	</session-factory>
 </hibernate-configuration>

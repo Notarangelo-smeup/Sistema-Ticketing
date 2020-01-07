@@ -1,9 +1,13 @@
 package org.fondazionejac.architetturasw.entities;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@DiscriminatorColumn(name="tipo")
+@DiscriminatorValue(value="Generico")
 public class TicketGenerico extends BaseTicket implements Ticket {
 
 	@Column(name="reparto")
@@ -25,4 +29,11 @@ public class TicketGenerico extends BaseTicket implements Ticket {
 		this.reparto = reparto;
 	}
 
+	@Override
+	public String toString() {
+		return "TicketGenerico [reparto=" + reparto + ", " + super.toString() + "]";
+	}
+
+	
+	
 }

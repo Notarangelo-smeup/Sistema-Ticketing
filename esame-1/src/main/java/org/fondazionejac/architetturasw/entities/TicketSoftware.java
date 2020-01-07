@@ -1,12 +1,12 @@
 package org.fondazionejac.architetturasw.entities;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
 
 @Entity
+@DiscriminatorValue(value="Software")
 public class TicketSoftware extends BaseTicket implements Ticket  {
 
 	@Column (name= "gravita")

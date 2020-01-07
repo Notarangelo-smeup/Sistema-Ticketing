@@ -1,58 +1,42 @@
 <html
-xmlns:th="http://www.thymeleaf.org">
-<head><title>Home Page</title></head>
-<body>
-<h1>Inserisci Ticket</h1>
-<p>Welcome to <span th:text="${appName}">Our App</span></p>
-<form action="#" th:action="@{/printSoftware}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
-
-  <!-- CASELLE DI TESTO -->
-  Titolo<br>
-  <input type="text" name="oggetto" ><br>
-  <!-- TEXTAREA -->
-  Descrizione<br>
-  <textarea name="descrizione" rows="5" cols="30" ></textarea>
-  <br><br>
-  Data<br>
-  <input type="date" name="creationTime" ><br>
-  
-    <!-- RADIO -->
-  Tipologia<br>
-  <input type="radio" name="tipo" value="Generico"> Generico<br>
-  <input type="radio" name="tipo" value="Software" > Software<br>
-  
-   Campo appartenenza<br>
-  <input type="text" name="campo" ><br>
-
-  <!-- CHECKBOX -->
-  Reparto<br>
-  <input type="checkbox" name="hobby" value="Logistica" > Logistica<br>
-  <input type="checkbox" name="hobby" value="Produzione"> Produzione<br>
-  <input type="checkbox" name="hobby" value="Test"> Test<br>
-  <input type="checkbox" name="hobby" value="Vendite"> Vendite<br>
-  <input type="checkbox" name="hobby" value="Acquisti">Acquisti<br>
-
-    Gravita<br>
-  <select name="paese">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="urgente">urgente</option>
-  </select><br>
-  
-  <!-- CHECKBOX -->
-  AreaSoftware<br>
-  <input type="checkbox" name="hobby" value="Web"> Web<br>
-  <input type="checkbox" name="hobby" value="Database"> Database<br>
-  <input type="checkbox" name="hobby" value="Test"> Test<br>
-  <input type="checkbox" name="hobby" value="Design"> Design<br>
-  <input type="checkbox" name="hobby" value="Sviluppo"> Sviluppo<br>
-
-  <!-- SUBMIT -->
-  <input type="submit" name="invia" value="Invia i dati">
-
-</form>
-</body>
+xmlns:th="http://www.thymeleaf.org" >
+	<head>
+		<title>Home Page</title>
+	</head>
+	<body>
+		<h1>Inserisci Ticket</h1>
+		<p>Welcome to <span th:text="${appName}">Our App</span></p>
+		<form action="#" th:action="@{/printSoftware}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
+		
+		  <!-- CASELLE DI TESTO -->
+		  Titolo<br>
+		  <input type="text" name="oggetto" ><br>
+		  <!-- TEXTAREA -->
+		  Descrizione<br>
+		  <textarea name="descrizione" rows="5" cols="30" ></textarea>
+		  <br><br>
+		
+		  Gravita<br>
+		  <select name="gravita">
+			  <option value="1">1</option>
+			  <option value="2">2</option>
+			  <option value="3">3</option>
+			  <option value="4">4</option>
+			  <option value="5">5</option>
+			  <option value="urgente">urgente</option>
+		  </select><br>
+		  
+		  <!-- CHECKBOX -->
+		  AreaSoftware<br>
+		  <input type="checkbox" name="areaSoftware" value="Web"> Web<br>
+		  <input type="checkbox" name="areaSoftware" value="Database"> Database<br>
+		  <input type="checkbox" name="areaSoftware" value="Test"> Test<br>
+		  <input type="checkbox" name="areaSoftware" value="Design"> Design<br>
+		  <input type="checkbox" name="areaSoftware" value="Sviluppo"> Sviluppo<br>
+		
+		  <!-- SUBMIT -->
+		  <input type="submit" name="invia" value="Invia i dati">
+		
+		</form>
+	</body>
 </html>

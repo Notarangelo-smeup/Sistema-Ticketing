@@ -1,5 +1,6 @@
 package org.fondazionejac.architetturasw.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,16 +10,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
-
 @Entity
 @Table(name ="Ticket")
-public abstract class BaseTicket {
+public abstract class BaseTicket implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int id;
+	protected int id;
 	
 	@Column(name= "oggetto")
 	private String oggetto;
@@ -32,8 +31,6 @@ public abstract class BaseTicket {
 	@Column(name = "creation_user")
 	private String creationUser;
 	
-	@Column(name = "tipo")
-	private String tipo;
 	/**
 	 * @return the id
 	 */
@@ -94,6 +91,8 @@ public abstract class BaseTicket {
 	/**
 	 * @return the creationUser
 	 */
+	
+	
 	public String getCreationUser() {
 		return creationUser;
 	}
@@ -105,22 +104,13 @@ public abstract class BaseTicket {
 		this.creationUser = creationUser;
 	}
 	
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
 
 	@Override
 	public String toString() {
 		return "BaseTicket [id=" + id + ", oggetto=" + oggetto + ", descrizione=" + descrizione + ", creationTime="
-				+ creationTime + ", creationUser=" + creationUser + ", tipo=" + tipo + "]";
+				 + creationTime + ", creationUser=" + creationUser +"]";
 	}
-
-	public String getTipo() {
-		return this.tipo;
-	}
-
-
-
+	
 }
 
 

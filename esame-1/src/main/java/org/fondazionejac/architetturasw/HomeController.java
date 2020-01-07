@@ -31,10 +31,11 @@ public class HomeController {
 
 	@RequestMapping(value = "/printGenerico", method = RequestMethod.POST)
 	public String printFormAttribute(@Valid @ModelAttribute("form") TicketGenerico bt, BindingResult result) {
-
 		
+		System.out.println(bt.toString() + "ciaos");
 		dao.creaTicket(bt);
-		System.out.println(bt.toString());
+		
+		
 		return "home";
 	}
 	
@@ -50,8 +51,7 @@ public class HomeController {
 	@RequestMapping(value = "/tipo", method = RequestMethod.POST)
 	public String dispatch(@ModelAttribute("form") String form, @RequestParam String tipo, BindingResult result) {
 
-		
-		
+				
 		if (tipo.equals("Generico"))
 			return "generico";
 
