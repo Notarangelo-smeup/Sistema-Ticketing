@@ -2,15 +2,12 @@
 xmlns:th="http://www.thymeleaf.org">
 	<head><title>Home Page</title></head>
 	<body>
-		<h1>Inserisci Ticket Generico</h1>
+		<h1>Modifica Ticket Generico</h1>
 		<p>Generico <span th:text="${appName}">Our App</span></p>
 		<form action="#" th:action="@{/updateGen}" th:object="${TicketGenerico}" modelAttribute="form" method="post">
 		
 		  
 		  <input type="hidden" name="id" th:field="*{id}" >
-		  <input type="hidden" name="id" th:field="*${#dates.formatISO()}">//TODO
-		  <input type="hidden" name="creationUser" th:field="*{creationUser}" >
-		  <input type="hidden" name="cliente" th:field="*{cliente}" >
 		  <!-- CASELLE DI TESTO -->
 		  Titolo<br></br>
 		  <input type="text" name="oggetto" th:field="*{oggetto}"></input><br></br>

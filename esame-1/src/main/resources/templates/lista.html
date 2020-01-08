@@ -14,12 +14,16 @@ xmlns:th="http://www.thymeleaf.org">
         <th>Cliente</th>
         <th>Tipo</th>
         <th>Oggetto</th>
+        <th>Inserimento<th>
+        <th>Utente<th>
       </tr>
       <tr th:each="ticket : ${tickets}">
         <td th:text="${ticket.id}"></td>
         <td th:text="${ticket.cliente}"></td>
         <td th:text="${ticket.dtype}"></td>
         <td th:text="${ticket.oggetto}"></td>
+        <td th:text="${ticket.creationTime}"></td>
+        <td th:text="${ticket.creationUser}"></td>
         <td ><a th:href = "@{/modifica/details(id=${ticket.id})}">Modifica</a><td>
       </tr>
       

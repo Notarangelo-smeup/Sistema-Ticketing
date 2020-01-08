@@ -18,7 +18,7 @@ public class BaseTicket {
 	@Column(name = "id")
 	protected int id;
 	
-	@Column(name= "cliente")
+	@Column(name= "cliente", updatable= false)
 	private String cliente;
 
 	@Column(name= "oggetto")
@@ -27,10 +27,10 @@ public class BaseTicket {
 	@Column(name= "descrizione")
 	private String descrizione;
     
-	@Column(name = "creation_time")
+	@Column(name = "creation_time", updatable= false)
 	private Date creationTime;
 	
-	@Column(name = "creation_user")
+	@Column(name = "creation_user", updatable= false)
 	private String creationUser;
 	
 	@Column(name= "dtype", insertable = false, updatable = false )
