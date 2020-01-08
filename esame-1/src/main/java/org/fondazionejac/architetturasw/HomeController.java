@@ -35,6 +35,11 @@ public class HomeController {
 	public String printFormAttribute(@ModelAttribute("form") TicketSoftware bt) {
 
 		dao.creaTicket(bt);
+	
+	@RequestMapping(value = "/printSoftware", method = RequestMethod.POST)
+	public String printFormAttribute(@Valid @ModelAttribute("form") TicketSoftware bt, BindingResult result) {
+     
+		System.out.println(bt.toString());
 		return "home";
 	}
 

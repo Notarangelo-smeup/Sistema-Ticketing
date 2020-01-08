@@ -34,9 +34,14 @@ public class TicketGenerico extends BaseTicket implements Ticket {
 
 	@Override
 	public String toString() {
+
 		return "TicketGenerico [reparto=" + reparto + ", " + super.toString() + "]";
 	}
 
 	
-	
+
+		return "TicketGenerico [reparto=" + reparto + "," + super.toString() ;
+	}
+
+
 }

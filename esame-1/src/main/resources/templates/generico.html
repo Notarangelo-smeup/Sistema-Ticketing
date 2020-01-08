@@ -29,4 +29,40 @@ xmlns:th="http://www.thymeleaf.org">
 		
 		</form>
 	</body>
+<head><title>Home Page</title></head>
+<body>
+<h1>Inserisci Ticket</h1>
+<p>Generico <span th:text="${appName}">Our App</span></p>
+<form action="#" th:action="@{/printGenerico}" th:object="${TicketGenerico}" modelAttribute= "form" method="post">
+
+  <!-- CASELLE DI TESTO -->
+  Titolo<br>
+  <input type="text" name="oggetto" ><br>
+  <!-- TEXTAREA -->
+  Descrizione<br>
+  <textarea name="descrizione" rows="5" cols="30" ></textarea>
+  <br><br>
+  Data<br>
+  <input type="date" name="creationTime" ><br>
+  
+   
+     <!-- RADIO -->
+  Tipologia<br>
+  
+  <input type="radio" name="tipo" value="Generico" > Generico<br>
+
+  <!-- CHECKBOX -->
+  Reparto<br>
+  <input type="checkbox" name="hobby" value="Logistica" > Logistica<br>
+  <input type="checkbox" name="hobby" value="Produzione"> Produzione<br>
+  <input type="checkbox" name="hobby" value="Test"> Test<br>
+  <input type="checkbox" name="hobby" value="Vendite"> Vendite<br>
+  <input type="checkbox" name="hobby" value="Acquisti">Acquisti<br>
+
+
+  <!-- SUBMIT -->
+  <input type="submit" name="invia" value="Invia i dati">
+
+</form>
+</body>
 </html>
