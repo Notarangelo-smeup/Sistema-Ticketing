@@ -4,37 +4,37 @@ xmlns:th="http://www.thymeleaf.org" >
 		<title>Home Page</title>
 	</head>
 	<body>
-		<h1>Inserisci Ticket</h1>
-		<p>Welcome to <span th:text="${appName}">Our App</span></p>
-		<form action="#" th:action="@{/printSoftware}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
+		<h1>Modifica ticket software</h1>
+		<p>Software <span th:text="${appName}">Our App</span></p>
+		<form action="#" th:action="@{/updateGen}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
 		  
 		  <input type="hidden" name="cliente" th:value="${cliente}">
 		
 		  <!-- CASELLE DI TESTO -->
 		  Titolo<br>
-		  <input type="text" name="oggetto" ><br>
+		  <input type="text" name="oggetto" th:field="*{oggetto}" ><br>
 		  <!-- TEXTAREA -->
 		  Descrizione<br>
-		  <textarea name="descrizione" rows="5" cols="30" ></textarea>
+		  <textarea name="descrizione" rows="5" cols="30"  th:field="*{descrizione}" ></textarea>
 		  <br><br>
 		
 		  Gravita<br>
 		  <select name="gravita">
-			  <option value="1">1</option>
-			  <option value="2">2</option>
-			  <option value="3">3</option>
-			  <option value="4">4</option>
-			  <option value="5">5</option>
-			  <option value="urgente">urgente</option>
+			  <option value="1" th:field="*{gravita}">1</option>
+			  <option value="2" th:field="*{gravita}">2</option>
+			  <option value="3" th:field="*{gravita}">3</option>
+			  <option value="4" th:field="*{gravita}">4</option>
+			  <option value="5" th:field="*{gravita}">5</option>
+			  <option value="urgente" th:field="*{gravita}">urgente</option>
 		  </select><br>
 		  
 		  <!-- CHECKBOX -->
 		  AreaSoftware<br>
-		  <input type="checkbox" name="areaSoftware" value="Web"> Web<br>
-		  <input type="checkbox" name="areaSoftware" value="Database"> Database<br>
-		  <input type="checkbox" name="areaSoftware" value="Test"> Test<br>
-		  <input type="checkbox" name="areaSoftware" value="Design"> Design<br>
-		  <input type="checkbox" name="areaSoftware" value="Sviluppo"> Sviluppo<br>
+		  <input type="checkbox" name="areaSoftware" value="Web" th:field="*{areaSoftware}"> Web<br>
+		  <input type="checkbox" name="areaSoftware" value="Database" th:field="*{areaSoftware}"> Database<br>
+		  <input type="checkbox" name="areaSoftware" value="Test" th:field="*{areaSoftware}"> Test<br>
+		  <input type="checkbox" name="areaSoftware" value="Design" th:field="*{areaSoftware}"> Design<br>
+		  <input type="checkbox" name="areaSoftware" value="Sviluppo" th:field="*{areaSoftware}"> Sviluppo<br>
 		
 		  <!-- SUBMIT -->
 		  <input type="submit" name="invia" value="Invia i dati">
