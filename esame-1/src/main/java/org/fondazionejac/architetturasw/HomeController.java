@@ -29,21 +29,16 @@ public class HomeController {
 	}
 
 	@PostMapping("/printGenerico")
-	public String printFormAttribute(@ModelAttribute("form") TicketGenerico bt) {
+	public String inserisciTicektGen(@ModelAttribute("form") TicketGenerico bt) {
 
 		dao.creaTicket(bt);
 		return "home";
 	}
 
 	@PostMapping("/printSoftware")
-	public String printFormAttribute(@ModelAttribute("form") TicketSoftware bt) {
+	public String inserisciTicketSof(@ModelAttribute("form") TicketSoftware bt) {
 
 		dao.creaTicket(bt);
-	
-	@RequestMapping(value = "/printSoftware", method = RequestMethod.POST)
-	public String printFormAttribute(@Valid @ModelAttribute("form") TicketSoftware bt, BindingResult result) {
-     
-		System.out.println(bt.toString());
 		return "home";
 	}
 
