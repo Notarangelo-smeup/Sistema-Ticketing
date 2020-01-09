@@ -7,13 +7,13 @@ import javax.persistence.Entity;
 
 import org.springframework.stereotype.Component;
 
-@Component(value="generico")
+@Component(value = "generico")
 @Entity
-@DiscriminatorColumn(name="tipo")
-@DiscriminatorValue(value="Generico")
+@DiscriminatorColumn(name = "tipo")
+@DiscriminatorValue(value = "Generico")
 public class TicketGenerico extends BaseTicket implements Ticket {
 
-	@Column(name="reparto")
+	@Column(name = "reparto")
 	private String reparto;
 
 	public TicketGenerico() {
@@ -37,6 +37,5 @@ public class TicketGenerico extends BaseTicket implements Ticket {
 
 		return "TicketGenerico [reparto=" + reparto + ", " + super.toString() + "]";
 	}
-
 
 }

@@ -10,36 +10,36 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="Ticket")
+@Table(name = "Ticket")
 public class BaseTicket {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	protected int id;
-	
-	@Column(name= "cliente", updatable= false)
+
+	@Column(name = "cliente", updatable = false)
 	private String cliente;
 
-	@Column(name= "oggetto")
+	@Column(name = "oggetto")
 	private String oggetto;
-	
-	@Column(name= "descrizione")
+
+	@Column(name = "descrizione")
 	private String descrizione;
-    
-	@Column(name = "creation_time", updatable= false)
+
+	@Column(name = "creation_time", updatable = false)
 	private Date creationTime;
-	
-	@Column(name = "creation_user", updatable= false)
+
+	@Column(name = "creation_user", updatable = false)
 	private String creationUser;
-	
-	@Column(name= "dtype", insertable = false, updatable = false )
+
+	@Column(name = "dtype", insertable = false, updatable = false)
 	private String dtype;
-	
+
 	/**
 	 * @return the id
 	 */
-		
+
 	public int getId() {
 		return id;
 	}
@@ -96,8 +96,7 @@ public class BaseTicket {
 	/**
 	 * @return the creationUser
 	 */
-	
-	
+
 	public String getCreationUser() {
 		return creationUser;
 	}
@@ -108,8 +107,7 @@ public class BaseTicket {
 	public void setCreationUser(String creationUser) {
 		this.creationUser = creationUser;
 	}
-	
-	
+
 	/**
 	 * @return the cliente
 	 */
@@ -123,8 +121,6 @@ public class BaseTicket {
 	public void setCliente(String cliente) {
 		this.cliente = cliente;
 	}
-	 
-	
 
 	/**
 	 * @return the dtype
@@ -142,10 +138,8 @@ public class BaseTicket {
 
 	@Override
 	public String toString() {
-		return "BaseTicket [id=" + id + ", oggetto=" + oggetto + ", cliente=" + cliente + ", descrizione=" + descrizione + ", creationTime="
-				 + creationTime + ", creationUser=" + creationUser +"]";
+		return "BaseTicket [id=" + id + ", oggetto=" + oggetto + ", cliente=" + cliente + ", descrizione=" + descrizione
+				+ ", creationTime=" + creationTime + ", creationUser=" + creationUser + "]";
 	}
-	
+
 }
-
-

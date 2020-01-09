@@ -63,13 +63,12 @@ public class HomeController {
 	}
 
 	@GetMapping("/modifica/details{id}")
-	public String modificaTicket(Model model, @RequestParam("id") String id) {
+	public String modificaTicket(Model model, @RequestParam int id) {
 
-		int intID = Integer.parseInt(id);
-		BaseTicket ticket = dao.findById(intID);
-		
-		String type = (ticket.getDtype().equals("Generico"))? "TicketGenerico" : "TicketSoftware";
-		
+		BaseTicket ticket = dao.findById(id);
+
+		String type = (ticket.getDtype().equals("Generico")) ? "TicketGenerico" : "TicketSoftware";
+
 		model.addAttribute(type, ticket);
 
 		switch (ticket.getDtype()) {
@@ -82,14 +81,14 @@ public class HomeController {
 		}
 		return "lista";
 	}
-	
+
 	@PostMapping("/updateGen")
 	public String updateGen(@ModelAttribute("form") TicketGenerico bt) {
 
 		dao.update(bt);
 		return "home";
 	}
-	
+
 	@PostMapping("/updateSof")
 	public String updateSof(@ModelAttribute("form") TicketSoftware bt) {
 

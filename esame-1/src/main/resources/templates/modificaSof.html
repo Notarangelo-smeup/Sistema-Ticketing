@@ -6,9 +6,9 @@ xmlns:th="http://www.thymeleaf.org" >
 	<body>
 		<h1>Modifica ticket software</h1>
 		<p>Software <span th:text="${appName}">Our App</span></p>
-		<form action="#" th:action="@{/updateGen}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
+		<form action="#" th:action="@{/updateSof}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
 		  
-		  <input type="hidden" name="cliente" th:value="${cliente}">
+		  <input type="hidden" name="id" th:field="*{id}" >
 		
 		  <!-- CASELLE DI TESTO -->
 		  Titolo<br>
