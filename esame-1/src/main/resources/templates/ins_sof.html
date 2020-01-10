@@ -36,82 +36,81 @@
 		<div class="wrap-contact100">
 			
 			
-			<form action="#" th:action="@{/tipo}" method="post" modelAttribute="form">
+			<form action="#" th:action="@{/printSoftware}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
 				<span class="contact100-form-title">
-					Inserisci Ticket
+					Inserisci Ticket Software
 				</span>
 
-				<!-- div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-					<span class="label-input100">FULL NAME *</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Your Name">
-				</div>
+				<input type="hidden" name="cliente" th:value="${cliente}">
 
-				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Enter Your Email (e@a.x)">
-					<span class="label-input100">Email *</span>
-					<input class="input100" type="text" name="email" placeholder="Enter Your Email ">
+				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+					<span class="label-input100">OGGETTO</span>
+					<input class="input100" type="text" name="oggetto" placeholder="Inserisci l'oggetto">
 				</div>
-
-				<div class="wrap-input100 bg1 rs1-wrap-input100">
-					<span class="label-input100">Phone</span>
-					<input class="input100" type="text" name="phone" placeholder="Enter Number Phone">
-				</div-->
+				
+				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
+					<span class="label-input100">DESCRIZIONE</span>
+					<textarea class="input100" name="descrizione" placeholder="Descrivere il problema"></textarea>
+				</div>
 
 				<div class="wrap-input100 input100-select bg1">
-					<span class="label-input100">Cliente *</span>
+					<span class="label-input100">Gravità</span>
 					<div>
-						  <select class="js-select2" name="cliente">
-							  <option value="Mario Spa">Mario Spa</option>
-							  <option value="Luigi Srl">Luigi Srl</option>
-							  <option value="Nello Snc">Nello Snc</option>
+						  <select class ="js-select2 " name="gravita">
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							  <option value="4">4</option>
+							  <option value="5">5</option>
+							  <option value="bloccante">Bloccante</option>
 						  </select>
 		
 						<div class="dropDownSelect2"></div>
 					</div>
 				</div>
-				
 
-				<div class="w-full dis-none" style="display:block">
+				<div class="w-full dis-none " style= "display:block;">
 					<div class="wrap-contact100-form-radio">
-						<span class="label-input100">Natura Segnalazione</span>
+						<span class="label-input100">Area</span>
 
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio1" type="radio" name="tipo" value="Generico" >
+							<input class="input-radio100" id="radio1" type="radio" name="areaSoftware" value="web" >
 							<label class="label-radio100" for="radio1">
-								Amministrativa/Altro
+								Web
 							</label>
 						</div>
 
 						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio2" type="radio" name="tipo" value="Software" >
+							<input class="input-radio100" id="radio2" type="radio" name="areaSoftware" value="database" >
 							<label class="label-radio100" for="radio2">
-								Software
+								Database
 							</label>
 						</div>
-
+						
+						<div class="contact100-form-radio m-t-15">
+							<input class="input-radio100" id="radio3" type="radio" name="areaSoftware" value="test" >
+							<label class="label-radio100" for="radio1">
+								Test
+							</label>
+						</div>
+						
+						<div class="contact100-form-radio m-t-15">
+							<input class="input-radio100" id="radio4" type="radio" name="areaSoftware" value="design" >
+							<label class="label-radio100" for="radio1">
+								Design
+							</label>
+						</div>
+						
+						<div class="contact100-form-radio m-t-15">
+							<input class="input-radio100" id="radio5" type="radio" name="areaSoftware" value="sviluppo" >
+							<label class="label-radio100" for="radio1">
+								Sviluppo
+							</label>
+						</div>
 						
 					</div>
-
-					<!-- div class="wrap-contact100-form-range">
-						<span class="label-input100">Budget *</span>
-
-						<div class="contact100-form-range-value">
-							$<span id="value-lower">610</span> - $<span id="value-upper">980</span>
-							<input type="text" name="from-value">
-							<input type="text" name="to-value">
-						</div>
-
-						<div class="contact100-form-range-bar">
-							<div id="filter-bar"></div>
-						</div>
-					</div>
 				</div>
-
-				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
-					<span class="label-input100">Message</span>
-					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
-				</div-->
-
-				</div>
+			
 				<div class="container-contact100-form-btn">
 					<button class="contact100-form-btn">
 						<span>

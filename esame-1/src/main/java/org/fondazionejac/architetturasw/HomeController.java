@@ -12,8 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -48,9 +46,9 @@ public class HomeController {
 		model.addAttribute("cliente", cliente);
 
 		if (tipo.equals("Generico"))
-			return "generico";
+			return "ins_gen";
 
-		return "software";
+		return "ins_sof";
 	}
 
 	@GetMapping("/lista")
@@ -76,9 +74,9 @@ public class HomeController {
 		switch (ticket.getDtype()) {
 
 		case "Generico":
-			return "modificaGen";
+			return "mod_Gen";
 		case "Software":
-			return "modificaSof";
+			return "mod_Sof";
 
 		}
 		return "lista";
