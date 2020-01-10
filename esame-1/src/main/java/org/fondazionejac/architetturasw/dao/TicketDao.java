@@ -1,6 +1,5 @@
 package org.fondazionejac.architetturasw.dao;
 
-import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +11,6 @@ import org.fondazionejac.architetturasw.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
-import org.hibernate.query.Query;
 
 @Transactional
 public class TicketDao {

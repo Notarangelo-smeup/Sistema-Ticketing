@@ -2,15 +2,13 @@ package org.fondazionejac.architetturasw;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.fondazionejac.architetturasw.dao.TicketDao;
 import org.fondazionejac.architetturasw.entities.BaseTicket;
 import org.fondazionejac.architetturasw.entities.TicketGenerico;
 import org.fondazionejac.architetturasw.entities.TicketSoftware;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 @Controller
+
 public class HomeController {
 
 	TicketDao dao = new TicketDao();
@@ -54,13 +54,15 @@ public class HomeController {
 	}
 
 	@GetMapping("/lista")
-	public String stampaTicket(Model model) {
+	
+	
+	
+	public String stampaLista() {
 
-		List<BaseTicket> tickets = dao.findAll();
-		model.addAttribute("tickets", tickets);
 
-		return "lista";
+		return "ListaVero";
 	}
+
 
 	@GetMapping("/modifica/details{id}")
 	public String modificaTicket(Model model, @RequestParam int id) {
