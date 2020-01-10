@@ -36,33 +36,34 @@
 		<div class="wrap-contact100">
 			
 			
-			<form action="#" th:action="@{/printSoftware}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
+			<form action="#" th:action="@{/updateSof}" th:object="${TicketSoftware}" modelAttribute= "form" method="post">
 				<span class="contact100-form-title">
-					Inserisci Ticket Software
+					Modifica Ticket #<span th:text="*{id}"></span>
 				</span>
 
-				<input type="hidden" name="cliente" th:value="${cliente}">
+				<input type="hidden" name="cliente" th:field="*{cliente}">
+				<input type="hidden" name="id" th:field="*{id}">
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
 					<span class="label-input100">OGGETTO</span>
-					<input class="input100" type="text" name="oggetto" placeholder="Inserisci l'oggetto">
+					<input class="input100" type="text" name="oggetto" placeholder="Inserisci l'oggetto"th:field="*{oggetto}">
 				</div>
 				
 				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
 					<span class="label-input100">DESCRIZIONE</span>
-					<textarea class="input100" name="descrizione" placeholder="Descrivere il problema"></textarea>
+					<textarea class="input100" name="descrizione" placeholder="Descrivere il problema"th:field="*{descrizione}"></textarea>
 				</div>
 
 				<div class="wrap-input100 input100-select bg1">
 					<span class="label-input100">Gravità</span>
 					<div>
-						  <select class ="js-select2 " name="gravita">
-							  <option value="1">1</option>
-							  <option value="2">2</option>
-							  <option value="3">3</option>
-							  <option value="4">4</option>
-							  <option value="5">5</option>
-							  <option value="bloccante">Bloccante</option>
+						  <select class ="js-select2" name="gravita">
+							  <option value="1" th:field="*{gravita}">1</option>
+							  <option value="2" th:field="*{gravita}">2</option>
+							  <option value="3" th:field="*{gravita}">3</option>
+							  <option value="4" th:field="*{gravita}">4</option>
+							  <option value="5" th:field="*{gravita}">5</option>
+							  <option value="bloccante" th:field="*{gravita}">Bloccante</option>
 						  </select>
 		
 						<div class="dropDownSelect2"></div>
@@ -74,36 +75,36 @@
 						<span class="label-input100">Area</span>
 
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio1" type="radio" name="areaSoftware" value="web" >
+							<input class="input-radio100" id="radio1" type="radio" name="areaSoftware" value="web" th:field="*{areaSoftware}">
 							<label class="label-radio100" for="radio1">
 								Web
 							</label>
 						</div>
 
 						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio2" type="radio" name="areaSoftware" value="database" >
+							<input class="input-radio100" id="radio2" type="radio" name="areaSoftware" value="database" th:field="*{areaSoftware}">
 							<label class="label-radio100" for="radio2">
 								Database
 							</label>
 						</div>
 						
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio3" type="radio" name="areaSoftware" value="test" >
-							<label class="label-radio100" for="radio1">
+							<input class="input-radio100" id="radio3" type="radio" name="areaSoftware" value="test" th:field="*{areaSoftware}">
+							<label class="label-radio100" for="radio3">
 								Test
 							</label>
 						</div>
 						
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio4" type="radio" name="areaSoftware" value="design" >
-							<label class="label-radio100" for="radio1">
+							<input class="input-radio100" id="radio4" type="radio" name="areaSoftware" value="design" th:field="*{areaSoftware}">
+							<label class="label-radio100" for="radio4">
 								Design
 							</label>
 						</div>
 						
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio5" type="radio" name="areaSoftware" value="sviluppo" >
-							<label class="label-radio100" for="radio1">
+							<input class="input-radio100" id="radio5" type="radio" name="areaSoftware" value="sviluppo" th:field="*{areaSoftware}">
+							<label class="label-radio100" for="radio5">
 								Sviluppo
 							</label>
 						</div>

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @Controller
 
 public class HomeController {
@@ -52,15 +51,10 @@ public class HomeController {
 	}
 
 	@GetMapping("/lista")
-	
-	
-	
 	public String stampaLista() {
-
 
 		return "ListaVero";
 	}
-
 
 	@GetMapping("/modifica/details{id}")
 	public String modificaTicket(Model model, @RequestParam int id) {
@@ -69,14 +63,15 @@ public class HomeController {
 
 		String type = (ticket.getDtype().equals("Generico")) ? "TicketGenerico" : "TicketSoftware";
 
+		System.out.println(ticket);
 		model.addAttribute(type, ticket);
 
 		switch (ticket.getDtype()) {
 
 		case "Generico":
-			return "mod_Gen";
+			return "mod_gen";
 		case "Software":
-			return "mod_Sof";
+			return "mod_sof";
 
 		}
 		return "lista";
@@ -86,14 +81,14 @@ public class HomeController {
 	public String updateGen(@ModelAttribute("form") TicketGenerico bt) {
 
 		dao.update(bt);
-		return "home";
+		return "ListaVero";
 	}
 
 	@PostMapping("/updateSof")
 	public String updateSof(@ModelAttribute("form") TicketSoftware bt) {
 
 		dao.update(bt);
-		return "home";
+		return "ListaVero";
 	}
 
 }

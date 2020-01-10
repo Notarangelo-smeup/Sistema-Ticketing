@@ -5,6 +5,8 @@ xmlns:th="http://www.thymeleaf.org">
 		<title>ListaTicket</title>
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 		
+		
+		
 		<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
@@ -13,9 +15,9 @@ xmlns:th="http://www.thymeleaf.org">
 	</head>
 	
 	<body>
-		<h1>Lista Ticket</h1>
+		<h1>Lista Ticket (cliccare sull'id per modificare)</h1>
     <table  id="example" class="display" style="width:100%">
-    </tabel>
+    </table>
 
 	<script type="text/javascript">
 		
@@ -31,7 +33,7 @@ xmlns:th="http://www.thymeleaf.org">
 						if (BaseTicket.id != null) {
 							
 							dataSet.push(
-								[BaseTicket.id , BaseTicket.cliente, BaseTicket.dtype, BaseTicket.oggetto,moment(BaseTicket.creationTime).format('DD/MM/YYYY'), BaseTicket.creationUser]
+								[BaseTicket.id , BaseTicket.cliente, BaseTicket.dtype, BaseTicket.oggetto,moment(BaseTicket.creationTime).format('DD/MM/YYYY'), BaseTicket.creationUser, ]
 								//[id , cliente, dtype, oggetto,moment(creationTime).format('DD/MM/YYYY'),creationUser]
 							);
 						}
@@ -49,9 +51,18 @@ xmlns:th="http://www.thymeleaf.org">
 				           
 				        ]
 				    } );
+				
+				    oTable.$('td:nth-child(1)').click(function(){
+				    	
+				    	var id=  $(this).text();
+				    	window.open('/modifica/details?id='+id);
+				    });
+				
+				
+				} );
 	
 				    /* Apply the jEditable handlers to the table */
-				    oTable.$('td:nth-child(2)').editable( 'rest/jac/documento/update', {
+				   /* oTable.$('td:nth-child(2)').editable( 'rest/jac/documento/update', {
 				        "callback": function( sValue, y ) {
 				        	console.log("value=" + sValue + ",y=" + y);
 				        },
@@ -64,8 +75,9 @@ xmlns:th="http://www.thymeleaf.org">
 				        "height": "14px",
 				        "width": "100%"
 				    } );
-				});
+				});*/
 				
+
 			} );
 		
 		</script>

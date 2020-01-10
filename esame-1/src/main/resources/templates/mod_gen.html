@@ -38,19 +38,21 @@
 			
 			<form action="#" th:action="@{/updateGen}" th:object="${TicketGenerico}" modelAttribute= "form" method="post">
 				<span class="contact100-form-title">
-					Modifica Ticket #<span th:text="${id}">
+					Modifica Ticket #<span th:text="*{id}"></span>
 				</span>
+				
+				  <input type="hidden" name="id" th:field="*{id}" >
 
-				<input type="hidden" name="reparto" th:field="${cliente}">
+				<!-- input type="hidden" name="reparto" th:field="${cliente}"-->
 
 				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
 					<span class="label-input100">OGGETTO</span>
-					<input class="input100" type="text" name="oggetto" placeholder="Inserisci l'oggetto" th:field="${oggetto}">
+					<input class="input100" type="text" name="oggetto" placeholder="Inserisci l'oggetto" th:field="*{oggetto}">
 				</div>
 				
 				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please Type Your Message">
 					<span class="label-input100">DESCRIZIONE</span>
-					<textarea class="input100" name="descrizione" placeholder="Descrivere il problema" th:field="${descrizione}"></textarea>
+					<textarea class="input100" name="descrizione" placeholder="Descrivere il problema" th:field="*{descrizione}"></textarea>
 				</div>
 
 				<div class="w-full dis-none " style= "display:block;">
@@ -58,36 +60,36 @@
 						<span class="label-input100">Area</span>
 
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio1" type="radio" name="reparto" value="Logistica" th:field="${reparto}">
+							<input class="input-radio100" id="radio1" type="radio" name="reparto" value="Logistica" th:field="*{reparto}">
 							<label class="label-radio100" for="radio1">
 								Logistica
 							</label>
 						</div>
 
 						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio2" type="radio" name="reparto" value="Produzione" th:field="${reparto}">
+							<input class="input-radio100" id="radio2" type="radio" name="reparto" value="Produzione" th:field="*{reparto}">
 							<label class="label-radio100" for="radio2">
 								Produzione
 							</label>
 						</div>
 						
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio3" type="radio" name="reparto" value="test" th:field="${reparto}">
-							<label class="label-radio100" for="radio1">
+							<input class="input-radio100" id="radio3" type="radio" name="reparto" value="test" th:field="*{reparto}">
+							<label class="label-radio100" for="radio3">
 								Test
 							</label>
 						</div>
 						
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio4" type="radio" name="reparto" value="Vendite" th:field="${reparto}">
-							<label class="label-radio100" for="radio1">
+							<input class="input-radio100" id="radio4" type="radio" name="reparto" value="Vendite" th:field="*{reparto}">
+							<label class="label-radio100" for="radio4">
 								Vendite
 							</label>
 						</div>
 						
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio5" type="radio" name="reparto" value="Acquisti" th:field="${reparto}">
-							<label class="label-radio100" for="radio1">
+							<input class="input-radio100" id="radio5" type="radio" name="reparto" value="Acquisti" th:field="*{reparto}">
+							<label class="label-radio100" for="radio5">
 								Acquisti
 							</label>
 						</div>

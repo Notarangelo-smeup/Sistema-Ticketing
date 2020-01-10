@@ -13,19 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 
 public class DataController {
-	
-@RequestMapping(value="/lista2" ,method= RequestMethod.GET ,produces=MediaType.APPLICATION_JSON_VALUE)
-	
-	public  List <BaseTicket> stampaTicket() {
 
-	TicketDao dao = new TicketDao();
-		
-		
+	@RequestMapping(value = "/lista2", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<BaseTicket> stampaTicket() {
+
+		TicketDao dao = new TicketDao();
+
 		List<BaseTicket> tickets = dao.findAll();
-		  return tickets;
-		
+		return tickets;
+
 	}
-
-
 
 }
